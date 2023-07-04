@@ -1,4 +1,5 @@
 
+import 'package:assignment_14/secondpageG.dart';
 import 'package:assignment_14/secondpageM.dart';
 import 'package:flutter/material.dart';
 import 'drawer.dart';
@@ -66,7 +67,7 @@ class _SplashPageState extends State<SplashPage> {
               Text(
                 ' !به هرات زیبا خوش آمدید',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.green,
                   fontSize: 24.0,
                   fontWeight: FontWeight.bold,
                 ),
@@ -93,7 +94,7 @@ class _FirstPageState extends State<FirstPage> {
         backgroundColor: Colors.blueAccent,
         title: Text(
           'هرات شهر علم و فرهنگ',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Colors.white),
         ),
         actions: [
           PopupMenuButton(
@@ -130,7 +131,7 @@ class _FirstPageState extends State<FirstPage> {
                     leading: CircleAvatar(
                       backgroundImage: AssetImage('assets/images/n2.jpg'),
                     ),
-                    title: Text('مشاهیر هرات'),
+                    title: Text('مشاهیر هرات',style: TextStyle(color: Colors.white),),
                     onTap: () {
                       Navigator.push(
                         context,
@@ -146,7 +147,7 @@ class _FirstPageState extends State<FirstPage> {
                     leading: CircleAvatar(
                       backgroundImage: AssetImage('assets/images/o2.jpg'),
                     ),
-                    title: Text('دیدنی های  هرات'),
+                    title: Text('دیدنی های  هرات',style: TextStyle(color: Colors.white),),
                     onTap: () {
                       Navigator.push(
                         context,
@@ -161,14 +162,14 @@ class _FirstPageState extends State<FirstPage> {
                   ),
                   ListTile(
                     leading: CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/f2.jpg'),
+                      backgroundImage: AssetImage('assets/images/220px-Mosalla.jpg'),
                     ),
-                    title: Text('فرهنگ '),
+                    title: Text('مکان های تاریخی هرات',style: TextStyle(color: Colors.white),),
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => SecondPage('فرهنگ')),
+                            builder: (context) => SecondPageF('مکان های تاریخی هرات')),
                       );
                     },
                   ),
@@ -177,15 +178,15 @@ class _FirstPageState extends State<FirstPage> {
                   ),
                   ListTile(
                     leading: CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/o3.jpg'),
+                      backgroundImage: AssetImage('assets/images/z4.jpg'),
                     ),
-                    title: Text('موقعیت و جغرافیای هرات'),
+                    title: Text('معرفی هرات',style: TextStyle(color: Colors.white),),
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                SecondPage('موقعیت و جغرافیای هرات')),
+                                SecondPageG(' معرفی هرات')),
                       );
                     },
                   ),
@@ -196,12 +197,13 @@ class _FirstPageState extends State<FirstPage> {
                     leading: CircleAvatar(
                       backgroundImage: AssetImage('assets/images/o1.jpg'),
                     ),
-                    title: Text('اطلاعات عمومی'),
+                    title: Text('اطلاعات عمومی',style: TextStyle(color: Colors.white),),
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => SecondPage('اطلاعات عمومی')),
+                            builder: (context) => SecondPageA('اطلاعات عمومی')
+                        ),
                       );
                     },
                   ),
@@ -225,59 +227,88 @@ class SecondPage extends StatefulWidget {
 }
 
 class _SecondPageState extends State<SecondPage> {
-  @override
+  final context01="تخت سفر دردامنه كوههاي شمالي شهر هرات واقع شده است وموقعيت بسيار زيبا ومنظره دلفريبي را دارا است. تخت سفر ازحيث موقعيت و زيباي طبيعي داراي شهرت تاريخي است. روايت است كه اين محل را سلطان حسين بايقرا ميرزا پادشاه مقتدر دوره تيموريان براي پدرخانم خود كه بابا صفر چوپان نام داشت ساخته است. وهمچنان هرموقع كه سلطان حسين بايقرا به سفر ميرفت و يا از سفر برميگشت درهمين محل با رجال هرات ملاقات مي‌نمود."
+      "عمار ساختمانهاي مجلل به زیبایی این مکان تفریحی افزوده بود كه به مرور زمان تخريب گرديد و در سال‌هاي 1317 الي 1327 هجري شمسي مجدداً ساختمان زيبايي ساخته شد و تمام ساحه با نهال‌هاي مثمر وغير مثمر سرسبز گرديد وحوض آب بازي نيز ساخته شد. مردم هرات درفصل بهار وتابستان بيشتر به ميله هاي عنعنوي وتفريح دراين پارک ميپرداختند."
+      "تخت سفر قبلاً توسط جوي سلطاني آبياري ميگرديد. درختان آن به مرورزمان بزرگ شده وآنجا را به يك ساحه سبز وسيع تبديل نموده بود . اين پارك تاريخي ونازنين كه در سرآشيبي طبيعي و زيباي دامنه كوه هاي شمالي هرات قراردارد دراثر جنگ هاي بعد از انقلاب هفتم ثور 1357 هجري شمسي كاملا از بين رفت و فقط نام آن باقي بود. بعد از پيروزي مجاهدين درسال 1371 امير محمد اسماعيل خان والي هرات توجه خاصي به اين پارك نموده ونهال هاي جديدي غرس گرديد و مهمانخانه وحوض آب جديد نيز ساخته شد ."
+      " بعد ازسال 1381 از طرف رياست شاروالي هرات بيشتر توجه صورت گرفت وحالا از جمله تفريحگاهاي مشهور هرات است";
+ final contents02="باغ ملت که یک فضای زیبا را در شهر هرات به خود گرفته در روز های جمعه تعداد کثیری از خانواده ها در این روز به این تفریگاه آمده و روز خود را سپری میکنند از ساعت 8 صبح تا 12 شب به روی شما باز میباشد در این تفریگاه تمام امکانات در نظر گرفته شده است که میتوان تعدادی از آن ها را نام برد:"
+     "- استخر برای قایق بازی"
+     "- باغ وحش"
+     "- کافی شاپ"
+     "- تالار برای محافل عروسی و مهمانی ها"
+     "- بوفه های مجهز";
+  final contents03="شفاخانه 400 بستر يا شفاخانه حوزوي هرات تا سه سال قبل تنها مرجع مريضان و مريضداران نه تنها از ولايت هرات بلکه از ولايات همجوار نيز بود."
+      "با گذشت چند سال حالا شفاخانه‌ها ، کلينيک‌هاي صحي، در مانگاه‌ها و مجتمع‌هاي طبي کوچک و بزرگ زياد ديگر در نقاط مختلف شهر و ولسوالي‌هاي اين ولايت به چشم مي‌خوردکه به تداوي مريضان مي‌پردازند."
+      "درک نياز مردم نسبت به نبود مراکز صحي آنها را بر آن داشته است تا خود در جهت رفع اين معضلات سهيم شوند و خود در ساخت چنين درمانگاه‌هاي اقدام کنند."
+      "مراکز صحي این ولایت، همانند فارابی، لقمان حکیم، کوثر، افغان سلامت، خواجه علی مؤفق و ده‌ها درمانگاه هستند که از چندي قبل شروع به فعاليت نموده، اما همچنان کارساخت آن براي توسعه اين درمانگاه جريان دارد."
+      "تا حال در ولايت هرات بيش از 20 مرکز صحي فعال شده‌اند. در سال جاري نيز سنگ تهداب چند مرکز صحي امسال گذاشته شده است که تا سال آينده به بهره برداري خواهند رسيد. تأسيس دواخانه‌ها و مراکز صحي با توجه به مشکلاتي که در سالهاي قبل مردم به آن مواجه بوده اند روندي روبه افزايش و مهار گسيخته دارد.";
+  final conntexts04="باغ شیدایی در کنار شهرک شیدایی موقعیت داشته و یکی از فضاهای سر سبز در شمال شرق هرات میباشد. باغ شیدایی یک مکان آرام و دلنشین میباشد که اکثر خانواده ها در روزهای تعطیلی در این باغ به تفریح مشغول هستند.";
+   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.category),
       ),
-      body: ListView(
-        children: [
-          ListTile(
-            leading: Icon(Icons.info),
-            title: Text('Subtopic 1'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => ThirdPage('Subtopic 1')),
-              );
-            },
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/T1.jpg"),
+            fit: BoxFit.cover,
           ),
-          ListTile(
-            leading: Icon(Icons.info),
-            title: Text('Subtopic 2'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => ThirdPage('Subtopic 2')),
-              );
-            },
+        ),
+        child: Expanded(
+          child: Padding(
+            padding: const EdgeInsets.all(130),
+            child: ListView(
+              children: [
+                ListTile(
+                  leading: CircleAvatar(backgroundImage: AssetImage('assets/images/oo2.jpg'),),
+                  title: Text('تخت سفر ',style: TextStyle(color: Colors.white)),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ThirdPage(context01)),
+                    );
+                  },
+                ),
+                ListTile(
+                  leading: CircleAvatar(backgroundImage: AssetImage('assets/images/b11.jpg'),),
+                  title: Text('پارک تفریحی ملت',style: TextStyle(color: Colors.white)),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ThirdPage(contents02)),
+                    );
+                  },
+                ),
+                ListTile(
+                  leading: CircleAvatar(backgroundImage: AssetImage('assets/images/s001.jpg'),),
+                  title: Text('مراکز صحی هرات',style: TextStyle(color: Colors.white)),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ThirdPage(contents03)),
+                    );
+                  },
+                ),
+                ListTile(
+                  leading: CircleAvatar(backgroundImage: AssetImage('assets/images/ss001.jpg'),),
+                  title: Text('باغ شیدایی',style: TextStyle(color: Colors.white)),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ThirdPage(conntexts04)),
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
-          ListTile(
-            leading: Icon(Icons.info),
-            title: Text('Subtopic 3'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => ThirdPage('Subtopic 3')),
-              );
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.info),
-            title: Text('Subtopic 4'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => ThirdPage('Subtopic 4')),
-              );
-            },
-          ),
-        ],
+        ),
       ),
     );
   }
@@ -299,23 +330,29 @@ class _ThirdPageState extends State<ThirdPage> {
       appBar: AppBar(
           // title: Text(widget.subtopic),
           ),
-      body: Padding(
-        padding: EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+       body:
+       Container(
+         color: Colors.blue,
+        child: //Column(
+         // crossAxisAlignment: CrossAxisAlignment.start,
+         // children: [
             // Text(
             //   widget.subtopic,
             //   style: TextStyle(fontSize: 24),
             // ),
-            SizedBox(height: 20),
-            Text(
-              ' ${widget.subtopic} ',
-              style: TextStyle(fontSize: 18),
+           // SizedBox(height: 20),
+            SingleChildScrollView(
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text(
+                      ' ${widget.subtopic} ',style: TextStyle(fontSize: 18,color: Colors.white),),
+                ),
+              ),
             ),
-          ],
+       //  ],
         ),
-      ),
+     // ),
     );
   }
 }

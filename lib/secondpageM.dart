@@ -74,11 +74,9 @@ class _SecondPageMState extends State<SecondPageM> {
           child: ListView(
             children: [
               ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/A1.jpg'),
-                ),
+                leading: CircleAvatar(backgroundImage: AssetImage('assets/images/A1.jpg'),),
                 title: Text(
-                  'خواجه عبدلله انصاری',
+                  'خواجه عبدلله انصاری',style: TextStyle(color: Colors.white),
                 ),
                 onTap: () {
                   Navigator.push(
@@ -92,7 +90,7 @@ class _SecondPageMState extends State<SecondPageM> {
                 leading: CircleAvatar(
                   backgroundImage: AssetImage('assets/images/q1.jpg'),
                 ),
-                title: Text('ملکه گوهر شاد بیگم'),
+                title: Text('ملکه گوهر شاد بیگم',style: TextStyle(color: Colors.white),),
                 onTap: () {
                   Navigator.push(
                     context,
@@ -105,7 +103,7 @@ class _SecondPageMState extends State<SecondPageM> {
                 leading: CircleAvatar(
                   backgroundImage: AssetImage('assets/images/download۵۵.jpg'),
                 ),
-                title: Text(' زندگی نامه سلمان هراتی شاعر معاصر '),
+                title: Text(' زندگی نامه سلمان هراتی شاعر معاصر ',style: TextStyle(color: Colors.white),),
                 onTap: () {
                   Navigator.push(
                     context,
@@ -118,7 +116,7 @@ class _SecondPageMState extends State<SecondPageM> {
                 leading: CircleAvatar(
                   backgroundImage: AssetImage('assets/images/۱۲۳۳۴.jpg'),
                 ),
-                title: Text('فدایی هروی'),
+                title: Text('فدایی هروی',style: TextStyle(color: Colors.white),),
                 onTap: () {
                   Navigator.push(
                     context,
@@ -131,7 +129,7 @@ class _SecondPageMState extends State<SecondPageM> {
                 leading: CircleAvatar(
                   backgroundImage: AssetImage('assets/images/8582.jpg'),
                 ),
-                title: Text('	خلاصه زندگی نامه رودکی'),
+                title: Text('	خلاصه زندگی نامه رودکی',style: TextStyle(color: Colors.white),),
                 onTap: () {
                   Navigator.push(
                     context,
@@ -145,7 +143,7 @@ class _SecondPageMState extends State<SecondPageM> {
                   backgroundImage:
                       AssetImage('assets/images/محمد امین خان به قلم مبین.png'),
                 ),
-                title: Text('  محمد امین خان تاجر'),
+                title: Text('  محمد امین خان تاجر',style: TextStyle(color: Colors.white),),
                 onTap: () {
                   Navigator.push(
                     context,
