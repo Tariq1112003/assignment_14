@@ -67,7 +67,7 @@ class _SplashPageState extends State<SplashPage> {
               Text(
                 ' !به هرات زیبا خوش آمدید',
                 style: TextStyle(
-                  color: Colors.green,
+                  color: Colors.black,
                   fontSize: 24.0,
                   fontWeight: FontWeight.bold,
                 ),
@@ -81,11 +81,13 @@ class _SplashPageState extends State<SplashPage> {
 }
 
 class FirstPage extends StatefulWidget {
+
   @override
   State<FirstPage> createState() => _FirstPageState();
 }
 
 class _FirstPageState extends State<FirstPage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,116 +104,121 @@ class _FirstPageState extends State<FirstPage> {
                     const PopupMenuItem(
                       child: ListTile(
                         leading: Icon(Icons.share,color: Colors.black,),
-                        title: Text('Share the app'),
+                        title: Text('اشتراک گذاری اپ'),
                       ),
                     ),
                   ]),
         ],
       ),
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/images/z1.jpg"),
-            fit: BoxFit.cover,
+      body: Center(
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/z1.jpg"),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: Builder(builder: (context) {
+            return Padding(
+              padding: const EdgeInsets.all(130),
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.white,
+                  ),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: ListView(
+                  children: [
+                    ListTile(
+                      leading: CircleAvatar(
+                        backgroundImage: AssetImage('assets/images/n2.jpg'),
+                      ),
+                      title: Text('مشاهیر هرات',style: TextStyle(color: Colors.white),),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SecondPageM('مشاهیر هرات')
+                          ),
+                        );
+                      },
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    ListTile(
+                      leading: CircleAvatar(
+                        backgroundImage: AssetImage('assets/images/o2.jpg'),
+                      ),
+                      title: Text('دیدنی های  هرات',style: TextStyle(color: Colors.white),),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  SecondPage('دیدنی های  هرات')),
+                        );
+                      },
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    ListTile(
+                      leading: CircleAvatar(
+                        backgroundImage: AssetImage('assets/images/220px-Mosalla.jpg'),
+                      ),
+                      title: Text('مکان های تاریخی هرات',style: TextStyle(color: Colors.white),),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SecondPageF('مکان های تاریخی هرات')),
+                        );
+                      },
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    ListTile(
+                      leading: CircleAvatar(
+                        backgroundImage: AssetImage('assets/images/z4.jpg'),
+                      ),
+                      title: Text('معرفی هرات',style: TextStyle(color: Colors.white),),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  SecondPageG(' معرفی هرات')),
+                        );
+                      },
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    ListTile(
+                      leading: CircleAvatar(
+                        backgroundImage: AssetImage('assets/images/o1.jpg'),
+                      ),
+                      title: Text('اطلاعات عمومی',style: TextStyle(color: Colors.white),),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SecondPageA('اطلاعات عمومی')
+                          ),
+                        );
+                      },
+                    ),
+                    SizedBox(height: 8,),
+                  ],
+                ),
+              ),
+            );
+          }
           ),
         ),
-        child: Builder(builder: (context) {
-          return Padding(
-            padding: const EdgeInsets.all(130),
-            child: Container(
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.white,
-                ),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: ListView(
-                children: [
-                  ListTile(
-                    leading: CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/n2.jpg'),
-                    ),
-                    title: Text('مشاهیر هرات',style: TextStyle(color: Colors.white),),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => SecondPageM('مشاهیر هرات')),
-                      );
-                    },
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  ListTile(
-                    leading: CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/o2.jpg'),
-                    ),
-                    title: Text('دیدنی های  هرات',style: TextStyle(color: Colors.white),),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                SecondPage('دیدنی های  هرات')),
-                      );
-                    },
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  ListTile(
-                    leading: CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/220px-Mosalla.jpg'),
-                    ),
-                    title: Text('مکان های تاریخی هرات',style: TextStyle(color: Colors.white),),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => SecondPageF('مکان های تاریخی هرات')),
-                      );
-                    },
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  ListTile(
-                    leading: CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/z4.jpg'),
-                    ),
-                    title: Text('معرفی هرات',style: TextStyle(color: Colors.white),),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                SecondPageG(' معرفی هرات')),
-                      );
-                    },
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  ListTile(
-                    leading: CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/o1.jpg'),
-                    ),
-                    title: Text('اطلاعات عمومی',style: TextStyle(color: Colors.white),),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => SecondPageA('اطلاعات عمومی')
-                        ),
-                      );
-                    },
-                  ),
-                ],
-              ),
-            ),
-          );
-        }),
       ),
     );
   }
@@ -246,6 +253,7 @@ class _SecondPageState extends State<SecondPage> {
    @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: AppDrawer(),
       appBar: AppBar(
         title: Text(widget.category),
       ),
@@ -327,12 +335,13 @@ class _ThirdPageState extends State<ThirdPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: AppDrawer(),
       appBar: AppBar(
-          // title: Text(widget.subtopic),
+           title: Text(widget.subtopic),
           ),
        body:
        Container(
-         color: Colors.blue,
+         color: Colors.white,
         child: //Column(
          // crossAxisAlignment: CrossAxisAlignment.start,
          // children: [
@@ -344,9 +353,9 @@ class _ThirdPageState extends State<ThirdPage> {
             SingleChildScrollView(
               child: Center(
                 child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Text(
-                      ' ${widget.subtopic} ',style: TextStyle(fontSize: 18,color: Colors.white),),
+                  padding: const EdgeInsets.all(25.0),
+                  child: Text(' ${widget.subtopic} ',textDirection: TextDirection.rtl,textAlign: TextAlign.justify,
+                    style: TextStyle(fontSize: 18,color: Colors.blue),),
                 ),
               ),
             ),

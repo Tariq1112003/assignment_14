@@ -1,6 +1,21 @@
 import 'package:flutter/material.dart';
 
-class AppDrawer extends StatelessWidget {
+import 'main.dart';
+
+class AppDrawer extends StatefulWidget {
+  @override
+  State<AppDrawer> createState() => _AppDrawerState();
+}
+
+class _AppDrawerState extends State<AppDrawer> {
+  int _selectedNavItem = 0;
+
+  void _selectNavItem(int index) {
+    setState(() {
+      _selectedNavItem = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -25,6 +40,12 @@ class AppDrawer extends StatelessWidget {
             ),
             title: Text('صفحه اصلی'),
             onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => FirstPage(),
+                ),
+              );
               // Handle home navigation
             },
           ),
@@ -35,16 +56,26 @@ class AppDrawer extends StatelessWidget {
             ),
             title: Text('محبوب'),
             onTap: () {
+              _selectNavItem(1);
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => favorite(),
+                ),
+              );
               // Handle favorite navigation
             },
           ),
-          ListTile(
+         /* ListTile(
             leading: Icon(
               Icons.history,
               color: Colors.yellow,
             ),
             title: Text('تاریخچه'),
             onTap: () {
+              _selectNavItem(2);
+              Navigator.pop(context);
               // Handle history navigation
             },
           ),
@@ -55,6 +86,19 @@ class AppDrawer extends StatelessWidget {
             ),
             title: Text('زمینه'),
             onTap: () {
+              _selectNavItem(3);
+              Navigator.pop(context);
+              // Handle settings navigation
+            },
+          ),*/
+          ListTile(
+            leading: Icon(
+              Icons.insert_page_break_sharp,
+              color: Colors.blue,
+            ),
+            title: Text('نسخه 1.0'),
+            onTap: () {
+
               // Handle settings navigation
             },
           ),
@@ -65,10 +109,30 @@ class AppDrawer extends StatelessWidget {
             ),
             title: Text('خروج'),
             onTap: () {
+              _selectNavItem(4);
+              Navigator.pop(context);
               // Handle exit action
             },
           ),
         ],
+      ),
+
+    );
+
+  }
+}
+class favorite extends StatelessWidget {
+  const favorite({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blueGrey,      ),
+      body: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        color: Colors.grey,
+
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'Drawer.dart';
 import 'main.dart';
 import 'package:flutter/material.dart';
 
@@ -43,6 +44,7 @@ class _SecondPageGState extends State<SecondPageG> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: AppDrawer(),
       appBar: AppBar(
         title: Text(widget.category),
       ),
@@ -151,6 +153,7 @@ final contnts0003="این کتاب‌خانه در سال ۱۳۱۰ خورشید�
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: AppDrawer(),
       appBar: AppBar(
         title: Text(widget.category),
       ),
@@ -252,6 +255,7 @@ class _SecondPageAState extends State<SecondPageA> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: AppDrawer(),
       appBar: AppBar(
         title: Text(widget.category),
       ),

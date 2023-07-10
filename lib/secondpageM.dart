@@ -1,3 +1,4 @@
+import 'Drawer.dart';
 import 'main.dart';
 import 'package:flutter/material.dart';
 
@@ -59,6 +60,7 @@ class _SecondPageMState extends State<SecondPageM> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: AppDrawer(),
       appBar: AppBar(
         title: Text(widget.category),
       ),
